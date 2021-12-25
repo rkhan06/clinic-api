@@ -4,7 +4,9 @@
   "description": "coding challenge",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "Rameen Khan",
   "license": "ISC",
