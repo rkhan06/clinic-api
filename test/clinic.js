@@ -58,9 +58,11 @@ describe("Clinics API", () => {
       res.body.data.should.have.property("vetClinics").that.is.an("Array");
       res.body.data.dentalClinics.forEach((clinic) => {
         clinic.stateName.should.equal("California");
+        clinic.name.should.equal('Mount Sinai Hospital');
       });
-      res.body.data.dentalClinics.forEach((clinic) => {
-        clinic.stateName.should.equal("California");
+      res.body.data.vetClinics.forEach((clinic) => {
+        clinic.stateCode.should.equal("CA");
+        clinic.clinicName.should.equal('Mount Sinai Hospital');
       });
     });
   });
