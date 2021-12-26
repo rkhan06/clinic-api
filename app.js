@@ -1,19 +1,19 @@
-const express = require('express')
+const express = require("express");
+// module imports
+const clinicController = require("./controllers/clinicController");
 
 const app = express();
 
-//middlewares
+// middlewares
 app.use(express.json());
 
+// API routes
+app.get("/api/clinic", clinicController.getClinics);
 
-app.get('/api/clinic', (req, res) =>{
-  res.send('Some data');
-})
-
-const PORT = process.env.PORT = '3000';
 // start server
+const PORT = process.env.PORT || "3000";
 app.listen(PORT, () => {
-  console.log(`server running on PORT: ${PORT}`)
+  console.log(`server running on PORT: ${PORT}`);
 });
 
 module.exports = app;
