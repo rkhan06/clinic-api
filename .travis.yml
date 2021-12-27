@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 14
+
+services:
+  - docker
+
+before_install:
+  - docker build -t rameen/clinics-api .
+  - docker run -d -p 3000:3000 rameen/clinics-api
+  - docker ps -a
+
+install:
+  - npm install
+script:
+  - npm run test
